@@ -1,14 +1,14 @@
 import dotenv from "dotenv";
 import express from "express";
 
-dotenv.config({ path: "../../.env" });
+dotenv.config({ path: "../.env" });
 
 const app = express();
 const port = Number(process.env.PORT) || 3001;
 
 app.use(express.json());
 
-app.post("/api/token", async (req, res) => {
+app.post("/token", async (req, res) => {
   const response = await fetch("https://discord.com/api/oauth2/token", {
     method: "POST",
     headers: {
